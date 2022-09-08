@@ -5,17 +5,19 @@ import {Header} from "./components/Header/Header";
 function App() {
 
   const hello = "Доброго вечора!!!"
-  const hello1 = {a:1,s:4};
+  const hello1 = {a: 1, s: 4};
 
+  const visible = true;
 
   return (
+
     <div className="App">
 
-      <Header text={hello} color={"green"} />
+      <Header text={hello} color={"green"} visible={visible}/>
       <Header/>
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo" alt="logo"/>
 
         <h1>{hello}</h1>
         <p>

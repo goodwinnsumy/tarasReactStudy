@@ -4,15 +4,19 @@ import React from 'react';
 
 const Header = (props) => {
 
+  const {text, visible, color} = props
+
   const style={
-    color: props.color
+    color: color
   }
 
   return (
-    <div>
-      <header> Реакт это легко, но это не точно!!!</header>
-      <h2 style={style}>{props.text}</h2>
-    </div>
+    visible&&<>
+      {visible&&<header> Реакт это легко, но это не точно!!!</header>}
+
+      {visible?<p>true</p>:<span>false</span>}
+      {/*<h2 style={style}>{text}</h2>*/}
+    </>
   );
 };
 
