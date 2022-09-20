@@ -12,7 +12,7 @@ class Counter extends Component {
     return (
       <div>
         {this.props.name}
-        {}
+
 
         <button onClick={()=>{
 
