@@ -5,11 +5,9 @@ import "./List.scss"
 
 class List extends Component {
 
-
-
-
   render() {
-    const {arr,name} = this.props;
+    const {arr,name, addHandler, ...props} = this.props;
+        // const arr = this.props.arr;
 
     console.log(arr)
 
@@ -20,9 +18,10 @@ class List extends Component {
     return (
       <div>
 
-
         {name}
         {list}
+
+        <button onClick={()=>{addHandler("Добавленное поле")}}> ADD 1 </button>
 
       </div>
     );

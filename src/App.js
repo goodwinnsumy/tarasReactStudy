@@ -4,6 +4,7 @@ import {Header} from "./components/Header/Header";
 import Counter from "./components/Counter/Counter";
 import List from "./components/List/List";
 import {Component} from "react";
+import Page from "./pages/Page";
 
 class App extends Component {
 
@@ -12,6 +13,12 @@ class App extends Component {
     visibleCounter:true
   }
 
+  arrAddHandler(el){
+    let arr = this.state.arr
+    arr.push(el)
+    this.setState({arr})
+    console.log(arr)
+  }
 
   render() {
 
@@ -23,35 +30,13 @@ class App extends Component {
 
       <>
 
-        <List name={"List"} arr={this.state.arr}/>
+        <Page/>
+
+        <List addHandler={(el)=>this.arrAddHandler(el)} name={"List"} arr={this.state.arr}/>
 
         {this.state.visibleCounter&&<Counter name={"Counter"}/>}
-
         <button onClick={()=>this.setState({visibleCounter:!this.state.visibleCounter})}> Click</button>
 
-        <div className="App">
-
-          <Header text={hello} color={"green"} visible={visible}/>
-
-          <Header/>
-
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo"/>
-
-            <h1>{hello}</h1>
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </div>
       </>
     );
   }
