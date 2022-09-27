@@ -17,12 +17,9 @@ class List extends Component {
 
     return (
       <div>
-
         {name}
         {list}
-
         <button onClick={()=>{addHandler("Добавленное поле")}}> ADD 1 </button>
-
       </div>
     );
   }
