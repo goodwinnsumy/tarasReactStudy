@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import {Header} from "./components/Header/Header";
 import Counter from "./components/Counter/Counter";
 import List from "./components/List/List";
 import {Component} from "react";
 import Page from "./pages/Page";
+import Header from "./components/Header/Header";
 
 class App extends Component {
 
@@ -29,6 +29,7 @@ class App extends Component {
     return (
 
       <>
+        <Header/>
 
         <Page/>
 

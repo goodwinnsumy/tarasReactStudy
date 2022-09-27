@@ -1,23 +1,36 @@
 import "./Header.scss"
 
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from "react-redux";
+import {changeTitleCreator} from "./action";
 
-const Header = (props) => {
 
-  const {text, visible, color} = props
+class Header extends Component {
 
-  const style={
-    color: color
+
+  render() {
+
+    const {color,title,dispatch} = this.props
+
+    const style={
+      color: color
+    }
+
+
+    return (
+      <>
+        <h1>{title}</h1>
+        <button onClick={()=>dispatch(changeTitleCreator())}>Change Title</button>
+      </>
+    );
   }
+}
 
-  return (
-    visible&&<>
-      {visible&&<header> Реакт это легко, но это не точно!!!</header>}
+const mapStateToProps = (store)=>{
+  return{
+    title: store.title
+  }
+}
 
-      {visible?<p>true</p>:<span>false</span>}
-      {/*<h2 style={style}>{text}</h2>*/}
-    </>
-  );
-};
+export default connect(mapStateToProps)(Header);
 
-export {Header};
