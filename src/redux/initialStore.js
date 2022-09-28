@@ -5,9 +5,11 @@ const initialStore = {
 
   counter: 0,
   posts:{
-    loading:false,
+    loading: false,
     posts:[]
-  }
+  },
+
+  list:[1,2]
 
 };
 

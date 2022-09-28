@@ -7,6 +7,7 @@ const titleReducer = (title= initialStore.title, action) => {
     case CHANGETITLE:
       // return action.payload;
       return "Redux it's so easy!!!"
+
     case "Trololo":
       return "Trololo";
     default:
