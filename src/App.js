@@ -32,6 +32,9 @@ class App extends Component {
     return (
 
       <>
+
+          {/*<img src="https://via.placeholder.com/600/92c952" alt=""/>*/}
+          
         <Header/>
 
           <CssModules/>
