@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
-import "./List.scss"
-import {logDOM} from "@testing-library/react";
+import style from "./List.module.scss"
 import {connect} from "react-redux";
 import {addItemCreate} from "./action";
 
@@ -18,7 +17,7 @@ class List extends Component {
         // const arr = this.props.arr;
 
     const listElements = list?.map((e,i)=>{
-      return <p key={uuidv4()}>{i} - {e}</p>
+      return <p className={style.p} key={uuidv4()}>{i} - {e}</p>
     })
 
     return (
@@ -31,7 +30,6 @@ class List extends Component {
           <input type="text" value={this.state.inputValue} onChange={(e)=>this.setState({inputValue:e.target.value})} />
         </form>
 
-
       </div>
     );
   }
@@ -41,7 +39,6 @@ function mapStateToProps(store) {
   return{
     list:store.list
   }
-
 }
 
 export default connect(mapStateToProps)(List);

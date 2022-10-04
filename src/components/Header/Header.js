@@ -7,7 +7,6 @@ import {changeTitleCreator} from "./action";
 
 class Header extends Component {
 
-
   render() {
 
     const {color,title,dispatch} = this.props
@@ -15,7 +14,6 @@ class Header extends Component {
     const style={
       color: color
     }
-
 
     return (
       <>

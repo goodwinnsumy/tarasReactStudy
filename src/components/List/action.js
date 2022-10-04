@@ -11,3 +11,8 @@ export const addItemCreate = (value)=>{
 export const delItemCreate = ()=>{
 
 }
+
+//
+// {type:ADDITEM}
+//
+// dispatch(addItemCreate("dfghfdghhd"))

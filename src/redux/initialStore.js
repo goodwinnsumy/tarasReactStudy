@@ -9,7 +9,7 @@ const initialStore = {
     posts:[]
   },
 
-  list:[1,2]
+  list:[1,2,6]
 
 };
 

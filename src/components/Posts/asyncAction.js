@@ -9,7 +9,7 @@ export function LoadedAction() {
     return (dispatch) => {
         dispatch({type: LOADING_START});
 
-        setTimeout(timeoutHandler,300)
+        setTimeout(timeoutHandler,1000)
 
         function timeoutHandler(){
 
@@ -24,6 +24,5 @@ export function LoadedAction() {
                     dispatch({type: LOADING_ERROR, error})
                 })
         }
-
     }
 }

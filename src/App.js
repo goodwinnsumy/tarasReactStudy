@@ -6,13 +6,10 @@ import {Component} from "react";
 import Page from "./pages/Page";
 import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
-
-
-
+import CssModules from "./components/CssModules/CssModules";
+import StyledComponents from "./components/StyledComponents/StyledComponents";
 
 class App extends Component {
-
-
 
   state={
     arr:[1,2,3,4,5,6,"qw","adsf"],
@@ -36,6 +33,11 @@ class App extends Component {
 
       <>
         <Header/>
+
+          <CssModules/>
+
+          <StyledComponents/>
+
 
         <Posts/>
 
