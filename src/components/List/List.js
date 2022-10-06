@@ -13,6 +13,7 @@ class List extends Component {
   }
 
 
+
   render() {
     const {name, list, dispatch} = this.props;
         // const arr = this.props.arr;
