@@ -41,8 +41,6 @@ class App extends Component {
 
           <StyledComponents/>
 
-
-
         <Posts/>
 
         <Page/>

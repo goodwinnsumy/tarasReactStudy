@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components'
 
 export const TextDiv = styled.div`
   font-size: 55px;
-  color: green;
+  color: gold;
 `;
 
 export const Title = styled.h2`

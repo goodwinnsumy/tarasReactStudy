@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import style from "./List.module.scss"
+// import "./List.module.scss"
 import {connect} from "react-redux";
 import {addItemCreate} from "./action";
 

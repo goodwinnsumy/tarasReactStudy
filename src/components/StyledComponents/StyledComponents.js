@@ -12,9 +12,9 @@ class StyledComponents extends React.Component {
   render() {
     return (
       <div>
-        <TextDiv isChange={false}>
+        <TextDiv >
             <p>asgasfgsrgs</p>
-            {/*<ColorText text={"Color text"} color={"red"} />*/}
+            <ColorText text={"Color text"} color={"red"} />
         </TextDiv>
 
         <Title isChanged={false}>
