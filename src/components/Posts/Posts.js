@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import ClipLoader from "react-spinners/ClipLoader";
-import {connect} from "react-redux";
+import {connect, useDispatch, useSelector} from "react-redux";
 import Loader from "../Loader/Loader";
 import axios from "axios";
 import {logDOM} from "@testing-library/react";
@@ -8,43 +8,53 @@ import {LoadedAction} from "./asyncAction";
 import "./Post.scss"
 import {RingLoader} from "react-spinners";
 
-class Posts extends Component {
+const Posts = (props) => {
 
-    componentDidMount() {
-        // axios('https://jsonplaceholder.typicode.com/posts')
-        //   .then(res => console.log(res))
-        this.props.dispatch(LoadedAction())
-    }
+    // componentDidMount() {
+    //     // axios('https://jsonplaceholder.typicode.com/posts')
+    //     //   .then(res => console.log(res))
+    //
+    // }
 
-    render() {
-        const {posts, dispatch} = this.props
+    const dispatch = useDispatch();
 
-        const postsMap = posts.posts.map((post,i) => {
-            return <p className={"p"} key={post.id}>{ post.title } </p>
-        })
+    // const [count, setCount] = useState(0);
 
-        const styleSpiner = {
-            display: "block",
-            margin: "0 auto",
-            // borderColor: "red",
-        };
+    console.log("qqqqq")
 
-        return (
-          <div>
-              {posts.loading ? <RingLoader color="#36d7b7" size={200} cssOverride={styleSpiner} /> : postsMap}
-              {/*{loading ? <Loader/> : postsMap}*/}
-          </div>
-        );
-    }
+    useEffect(()=>{
+        // setCount(count+1)
+        dispatch(LoadedAction())
+
+        return ()=> console.log("bye")
+    },[])
+
+    const posts = useSelector((store)=>store.posts);
+
+    // const {posts, dispatch} = this.props
+
+    const postsMap = posts?.posts?.map((post, i) => {
+        return <p className={"p"} key={post.id}>{post.title} </p>
+    })
+
+    const styleSpiner = {
+        display: "block",
+        margin: "0 auto",
+        // borderColor: "red",
+    };
+
+    return (
+        <div>
+
+            {posts?.loading ? <RingLoader color="#36d7b7" size={200} cssOverride={styleSpiner}/> : postsMap}
+            {/*{loading ? <Loader/> : postsMap}*/}
+        </div>
+    );
+
 }
 
-function mapStateToProps(store) {
-    return{
-        posts: store.posts
-    }
-}
 
-export default connect(mapStateToProps)(Posts);
+export default Posts;
 
 
 

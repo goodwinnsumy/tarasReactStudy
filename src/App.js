@@ -37,11 +37,11 @@ class App extends Component {
           
         <Header/>
 
-          <CssModules/>
+          {/*<CssModules/>*/}
 
-          <StyledComponents/>
+          {/*<StyledComponents/>*/}
 
-        <Posts/>
+          {this.state.visibleCounter&&<Posts/>}
 
         <Page/>
 
