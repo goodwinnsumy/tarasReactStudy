@@ -1,34 +1,29 @@
 import "./Header.scss"
 
 import React, {Component} from 'react';
-import {connect} from "react-redux";
+import {connect, useSelector} from "react-redux";
 import {changeTitleCreator} from "./action";
+import {Link, NavLink} from "react-router-dom";
 
 
-class Header extends Component {
-
-  render() {
-
-    const {color,title,dispatch} = this.props
-
-    const style={
-      color: color
-    }
+const Header =(props)=> {
+    const auth = useSelector((store) => store.auth)
 
     return (
       <>
-        <h1>{title}</h1>
-        <button onClick={()=>dispatch(changeTitleCreator())}>Change Title</button>
+        <div className="nav">
+          <Link to="/">Home</Link>
+
+          {!auth? <Link to="/auth">LogIn</Link>:<Link to="/auth">LogOut</Link>}
+          <Link to="/users">Users</Link>
+          <NavLink to="/counters">Counters</NavLink>
+
+          <NavLink to="/messages">Messages</NavLink>
+          <NavLink to="/posts">Posts</NavLink>
+        </div>
       </>
     );
-  }
 }
 
-const mapStateToProps = (store)=>{
-  return{
-    title: store.title
-  }
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;
 

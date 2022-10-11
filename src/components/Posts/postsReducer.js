@@ -2,7 +2,7 @@ import {LOADING_END, LOADING_ERROR, LOADING_START} from "./asyncAction";
 import initialStore from "../../redux/initialStore";
 
 
-export default function postsReducer(postsFromStore=initialStore.posts, {type, error, payload}) {
+export default function postsReducer(postsFromStore= initialStore.posts, {type, error, payload}) {
     switch (type) {
         case LOADING_START:
             return {

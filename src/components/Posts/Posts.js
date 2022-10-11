@@ -7,6 +7,7 @@ import {logDOM} from "@testing-library/react";
 import {LoadedAction} from "./asyncAction";
 import "./Post.scss"
 import {RingLoader} from "react-spinners";
+import {Link} from "react-router-dom";
 
 const Posts = (props) => {
 
@@ -34,7 +35,9 @@ const Posts = (props) => {
     // const {posts, dispatch} = this.props
 
     const postsMap = posts?.posts?.map((post, i) => {
-        return <p className={"p"} key={post.id}>{post.title} </p>
+        return <p className={"p"} key={post.id}>
+            <Link to={`/posts/${post.id}`}> {post.title}</Link>
+        </p>
     })
 
     const styleSpiner = {
