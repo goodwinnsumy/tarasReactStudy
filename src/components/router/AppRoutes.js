@@ -1,4 +1,4 @@
-import './App.css';
+import './AppRoutes.scss';
 import Counter from "../Counter/Counter";
 import Posts from "../Posts/Posts";
 import {Route, Routes} from "react-router-dom";
@@ -10,39 +10,37 @@ import RequireAuth from "./RequireAuth";
 import Post from "../Post/Post";
 
 const AppRoutes = () => {
-    return (
-        <>
-            <Routes>
-                <Route path="/" element={<Layout/>}>
-                    <Route index element={<Home/>}/>
-                    <Route path="auth" element={<Auth/>}/>
-                    <Route path="counters" element={<Counter/>}/>
-
-                    <Route path="posts" element={
-                        <RequireAuth>
-                            <Posts/>
-                        </RequireAuth>
-                    }/>
-
-                    <Route path="posts/:postID" element={
-                        <RequireAuth>
-                            <Post/>
-                        </RequireAuth>
-                    }/>
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Layout/>}>
+          <Route index element={<Home/>}/>
+          <Route path="auth" element={<Auth/>}/>
 
 
-                    {/*<Route path="/users" element={withRouter(Users)}/>*/}
-                    {/*<Route path="/users/:id" element={<SubUsers/>}/>*/}
+          <Route path="counters" element={
+            <RequireAuth>
+              <Counter/>
+            </RequireAuth>
+          }/>
 
-                    <Route path="*" element={<NotFoundPage/>}/>
+          <Route path="posts" element={
+            <RequireAuth>
+              <Posts/>
+            </RequireAuth>
+          }/>
 
+          <Route path="posts/:postID" element={
+            <RequireAuth>
+              <Post/>
+            </RequireAuth>
+          }/>
 
-                </Route>
-            </Routes>
-
-        </>
-    );
+          <Route path="*" element={<NotFoundPage/>}/>
+        </Route>
+      </Routes>
+    </>
+  );
 }
-
 
 export default AppRoutes;

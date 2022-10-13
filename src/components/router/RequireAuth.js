@@ -1,5 +1,8 @@
 import { useLocation, Navigate } from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
+import {login, ModalAuthCloseCreate, ModalAuthOpenCreate} from "../Auth/actions";
+import Modal from "../Modal/Modal";
+import React from "react";
 
 const RequireAuth = ({children}) => {
     // const location = useLocation();
@@ -8,11 +11,21 @@ const RequireAuth = ({children}) => {
 
   // console.log(location)
 
-    if (!auth) {
+    if (!auth.name) {
         // return <Navigate to='/login' state={{from: location}} />
-        return <Navigate to='/auth' />
-        // return ()=> dispatch(ModalAuthOpenCreate())
+        return <Navigate to='/auth'/>
+        // return dispatch(ModalAuthOpenCreate())
+
+
     }
+    //     return ()=> {<Modal action={
+    //         <button onClick={() => {
+    //             dispatch(login())
+    //             dispatch(ModalAuthCloseCreate())
+    //         }
+    //         }> Login</button>
+    //     } closeHandler={() => dispatch(ModalAuthCloseCreate())}/>}
+    // }
 
   return children;
 }

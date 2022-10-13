@@ -4,14 +4,14 @@ import initialStore from "../../redux/initialStore";
 const authReducer = (auth = initialStore.auth, action) => {
     switch (action.type) {
         case LOGIN:
-            return true;
+            return {...auth, name: "admin"};
         case LOGOUT:
-            return false;
+            return {...auth, name: false};
 
-        // case MODALAUTHOPEN:
-        //     return {...auth, modal: true};
-        // case MODALAUTHCLOSE:
-        //     return {...auth, modal: false};
+        case MODALAUTHOPEN:
+            return {...auth, modal: true};
+        case MODALAUTHCLOSE:
+            return {...auth, modal: false};
 
 
         default:

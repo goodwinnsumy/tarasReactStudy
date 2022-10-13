@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {LOGIN, login, logout, ModalAuthCloseCreate, ModalAuthOpenCreate} from "./actions";
+import Modal from "../Modal/Modal";
+import {useNavigate} from "react-router-dom";
 // import Modal from "../Modal/Modal";
 
 const Auth = (props) => {
@@ -13,28 +15,28 @@ const Auth = (props) => {
     // }
     //
     //
-    // useEffect(()=>{
-    //     dispatch(ModalAuthOpenCreate())
-    // },[])
+    useEffect(()=>{
+        dispatch(ModalAuthOpenCreate())
+    },[])
     //
+
+    const navigate = useNavigate();
 
     return (
         <div>
+            {auth.modal && <Modal action={
+                <button onClick={() => {
+                    dispatch(login())
+                    dispatch(ModalAuthCloseCreate())
+                    navigate(-1);
 
-            {/*{auth.modal && <Modal action={*/}
-            {/*    <button onClick={() => {*/}
-            {/*        dispatch(login())*/}
-            {/*        dispatch(ModalAuthCloseCreate())*/}
-            {/*    }*/}
-            {/*    }> Login</button>*/}
-            {/*} closeHandler={() => closeHandler()}/>}*/}
+                }
+                }> Login</button>
+            } closeHandler={() =>  dispatch(ModalAuthCloseCreate())}/>}
 
             {/*{ dispatch(ModalAuthOpenCreate())}*/}
-            {!auth?<button onClick={()=>dispatch(login())}> Login</button> : <button onClick={()=>dispatch(logout())}> Logout</button>}
+            {/*{!auth.name?<button onClick={()=>dispatch(login())}> Login</button> : <button onClick={()=>dispatch(logout())}> Logout</button>}*/}
             {/*<button onClick={()=>dispatch(login())}> Login</button>*/}
-
-
-
         </div>
     );
 };
