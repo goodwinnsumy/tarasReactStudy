@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import Portal from "../Portal/Portal";
 import "./Modal.scss"
 import useInput from "../hooks/useInput";
@@ -22,9 +22,11 @@ const Modal = (props) => {
 
 
                     <form action="">
-                        <label htmlFor="login">Login: </label>
+                        <label >Login1:
+                            <input {...name} type="text" id={"login"} name={"login1"}/>
+                        </label>
                         {/*<input  value={auth.name}  onChange={(e)=>dispatch(login(e.target.value))} type="text" id={"login"} name={"login"}/>*/}
-                        <input {...name} type="text" id={"login"} name={"login"}/>
+
 
                         {name.value}
                         <br/>
