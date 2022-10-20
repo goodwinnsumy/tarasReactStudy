@@ -8,9 +8,7 @@ import {Link} from "react-router-dom";
 
 
 const Posts = (props) => {
-
    const dispatch = useDispatch();
-
 
     useEffect(()=>{
         dispatch(LoadedAction())

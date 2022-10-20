@@ -3,9 +3,7 @@ import axios from "axios";
 import {ClimbingBoxLoader} from "react-spinners";
 
 const ToDo = () => {
-
   const [todo,setTodo] = useState()
-
 
   useEffect(()=>{
     axios("https://jsonplaceholder.typicode.com/todos")
