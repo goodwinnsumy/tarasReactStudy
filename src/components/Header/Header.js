@@ -27,6 +27,8 @@ const Header = (props) => {
 
         <Link to="/users">Users</Link>
         <NavLink to="/counters">Counters</NavLink>
+        <NavLink to="/usecallback">useCallback</NavLink>
+        <NavLink to="/usememo">useMemo</NavLink>
 
         <NavLink to="/messages">Messages</NavLink>
         <NavLink to="/posts">Posts</NavLink>

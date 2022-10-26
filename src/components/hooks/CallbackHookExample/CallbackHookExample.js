@@ -26,7 +26,7 @@ const CallbackHookExample = () => {
     console.log('render!');
     return new Array(count2).fill(null).map((_, idx) => `Element ${idx + 1}`)
   }, [count2]);
-  //
+
   // const getData = ()=>{
   //   console.log('render!');
   //   return new Array(count2).fill(null).map((_, idx) => `Element ${idx + 1}`)
